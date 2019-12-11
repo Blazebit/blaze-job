@@ -106,7 +106,7 @@ public class MemoryJobManager implements JobManager {
         return jobInstances.stream()
             .filter(i -> i.getState() == JobInstanceState.NEW
                 && i.getScheduleTime().toEpochMilli() <= clock.millis()
-                && (partitionCount == 1 || (i.getPartitionKey() & partitionCount) == partition)
+                && (partitionCount == 1 || (i.getPartitionKey() % partitionCount) == partition)
                 && partitionKey.matches(i)
             )
             .sorted(Comparator.comparing(JobInstance::getScheduleTime))
@@ -118,7 +118,7 @@ public class MemoryJobManager implements JobManager {
     public Instant getNextSchedule(int partition, int partitionCount, PartitionKey partitionKey) {
         return jobInstances.stream()
             .filter(i -> i.getState() == JobInstanceState.NEW
-                && (partitionCount == 1 || (i.getPartitionKey() & partitionCount) == partition)
+                && (partitionCount == 1 || (i.getPartitionKey() % partitionCount) == partition)
                 && partitionKey.matches(i)
             )
             .sorted(Comparator.comparing(JobInstance::getScheduleTime))
