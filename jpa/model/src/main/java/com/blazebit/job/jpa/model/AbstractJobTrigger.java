@@ -25,9 +25,6 @@ import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
@@ -71,13 +68,6 @@ public abstract class AbstractJobTrigger<T extends AbstractJob> extends Abstract
      */
     protected AbstractJobTrigger(Long id) {
         super(id);
-    }
-
-    @Id
-    @Override
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "idGenerator")
-    public Long getId() {
-        return id();
     }
 
     @Override

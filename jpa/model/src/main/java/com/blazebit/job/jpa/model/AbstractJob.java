@@ -20,9 +20,6 @@ import com.blazebit.job.Job;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
@@ -61,13 +58,6 @@ public abstract class AbstractJob extends BaseEntity<Long> implements Job {
      */
     protected AbstractJob(Long id) {
         super(id);
-    }
-
-    @Id
-    @Override
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "idGenerator")
-    public Long getId() {
-        return id();
     }
 
     @Override
