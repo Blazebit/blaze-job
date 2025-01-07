@@ -17,6 +17,7 @@ package com.blazebit.job.schedule.spring;
 
 import com.blazebit.job.Schedule;
 import com.blazebit.job.ScheduleContext;
+import java.time.Instant;
 import org.springframework.scheduling.Trigger;
 import org.springframework.scheduling.TriggerContext;
 
@@ -76,13 +77,28 @@ public class TriggerSchedule implements Schedule {
         }
 
         @Override
+        public Instant lastScheduledExecution() {
+            return Instant.ofEpochMilli(delegate.getLastScheduleTime());
+        }
+
+        @Override
         public Date lastActualExecutionTime() {
             return new Date(delegate.getLastExecutionTime());
         }
 
         @Override
+        public Instant lastActualExecution() {
+            return Instant.ofEpochMilli(delegate.getLastExecutionTime());
+        }
+
+        @Override
         public Date lastCompletionTime() {
             return new Date(delegate.getLastCompletionTime());
+        }
+
+        @Override
+        public Instant lastCompletion() {
+            return Instant.ofEpochMilli(delegate.getLastCompletionTime());
         }
     }
 

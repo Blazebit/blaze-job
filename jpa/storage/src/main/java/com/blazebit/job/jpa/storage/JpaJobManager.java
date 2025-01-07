@@ -32,10 +32,10 @@ import com.blazebit.job.jpa.model.JpaPartitionKey;
 import com.blazebit.job.jpa.model.JpaTriggerBasedJobInstance;
 import com.blazebit.job.spi.TransactionSupport;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
-import javax.persistence.metamodel.EntityType;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
+import jakarta.persistence.metamodel.EntityType;
 import java.io.Serializable;
 import java.time.Clock;
 import java.time.Instant;

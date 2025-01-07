@@ -18,12 +18,12 @@ package com.blazebit.job.jpa.model;
 
 import com.blazebit.job.Job;
 
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.PrePersist;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import java.time.Instant;
 
 /**

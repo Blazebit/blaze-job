@@ -27,10 +27,10 @@ import com.blazebit.job.ServiceProvider;
 import com.blazebit.job.jpa.model.JpaPartitionKey;
 import com.blazebit.job.spi.PartitionKeyProvider;
 
-import javax.persistence.EntityManager;
-import javax.persistence.metamodel.EntityType;
-import javax.persistence.metamodel.IdentifiableType;
-import javax.persistence.metamodel.Metamodel;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.metamodel.EntityType;
+import jakarta.persistence.metamodel.IdentifiableType;
+import jakarta.persistence.metamodel.Metamodel;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;

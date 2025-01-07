@@ -16,10 +16,10 @@
 
 package com.blazebit.job.jpa.model;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.Lob;
-import javax.persistence.Transient;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.Lob;
+import jakarta.persistence.Transient;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashMap;

@@ -18,9 +18,9 @@ package com.blazebit.job.transaction.javaee;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.transaction.TransactionManager;
-import javax.transaction.TransactionSynchronizationRegistry;
-import javax.transaction.UserTransaction;
+import jakarta.transaction.TransactionManager;
+import jakarta.transaction.TransactionSynchronizationRegistry;
+import jakarta.transaction.UserTransaction;
 
 /**
  * A holder of JTA resources.

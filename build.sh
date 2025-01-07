@@ -18,20 +18,12 @@ else
   export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m $MAVEN_OPTS"
 fi
 
-if [ "$JDK" = "9" ]; then
-  export JAVA_HOME="/usr/lib/jvm/java-9-oracle/"
-fi
-
 $DIR/mvnw -version
 
 PROPERTIES="$PROPERTIES -Duser.country=US -Duser.language=en"
 
 if [ "$BUILD_JDK" != "" ]; then
   PROPERTIES="$PROPERTIES -Djava.version=$BUILD_JDK"
-fi
-
-if [ "$JDK" != "" ]; then
-  PROPERTIES="$PROPERTIES -Djdk8.home=/usr/lib/jvm/java-8-oracle"
 fi
 
 exec $DIR/mvnw -B clean install -V $PROPERTIES

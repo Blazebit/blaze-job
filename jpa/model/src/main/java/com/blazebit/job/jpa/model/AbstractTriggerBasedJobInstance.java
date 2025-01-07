@@ -18,13 +18,13 @@ package com.blazebit.job.jpa.model;
 
 import com.blazebit.job.JobTrigger;
 
-import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ForeignKey;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * An abstract mapped superclass implementing the {@link JpaTriggerBasedJobInstance} interface.

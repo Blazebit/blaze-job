@@ -31,9 +31,9 @@ import com.blazebit.persistence.view.EntityViewManager;
 import com.blazebit.persistence.view.metamodel.ManagedViewType;
 import com.blazebit.persistence.view.metamodel.ViewType;
 
-import javax.persistence.metamodel.EntityType;
-import javax.persistence.metamodel.IdentifiableType;
-import javax.persistence.metamodel.Metamodel;
+import jakarta.persistence.metamodel.EntityType;
+import jakarta.persistence.metamodel.IdentifiableType;
+import jakarta.persistence.metamodel.Metamodel;
 import java.lang.annotation.Annotation;
 import java.util.Collection;
 import java.util.Map;

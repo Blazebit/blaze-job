@@ -31,8 +31,7 @@
     <description>Blazebit Blaze-Job</description>
 
     <properties>
-        <jdk8.home>${env.JAVA_HOME}</jdk8.home>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <version.checkstyle>8.7</version.checkstyle>
@@ -84,9 +83,7 @@
         <developer>
             <id>Mobe91</id>
             <name>Moritz Becker</name>
-            <email>m.becker@ordami.com</email>
-            <organization>Ordami</organization>
-            <organizationUrl>http://www.ordami.com</organizationUrl>
+            <email>moritz.becker@gmx.at</email>
             <timezone>UTC+1</timezone>
             <roles>
                 <role>Committer</role>
@@ -189,51 +186,4 @@
             </plugin>
         </plugins>
     </build>
-    <profiles>
-        <profile>
-            <!-- It disables javadoc doclint for JDK > 8 -->
-            <id>javadoc-xdoclint-disable-jdk8+</id>
-            <activation>
-                <jdk>[1.8,)</jdk>
-            </activation>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-javadoc-plugin</artifactId>
-                            <version>3.2.0</version>
-                            <configuration>
-                                <additionalJOption>-Xdoclint:none</additionalJOption>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
-        </profile>
-        <profile>
-            <id>jdk9+</id>
-            <activation>
-                <jdk>[1.9,)</jdk>
-            </activation>
-            <properties>
-                <version.enforcer.plugin>3.0.0-M1</version.enforcer.plugin>
-            </properties>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-javadoc-plugin</artifactId>
-                            <version>3.2.0</version>
-                            <configuration>
-                                <source>8</source> <!-- https://bugs.openjdk.java.net/browse/JDK-8212233 -->
-                                <additionalJOption>-Xdoclint:none</additionalJOption>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
-        </profile>
-    </profiles>
 </project>

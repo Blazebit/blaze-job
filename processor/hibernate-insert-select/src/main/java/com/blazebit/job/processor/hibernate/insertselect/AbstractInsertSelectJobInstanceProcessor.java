@@ -22,7 +22,7 @@ import com.blazebit.job.JobInstanceProcessor;
 import com.blazebit.persistence.CriteriaBuilderFactory;
 import com.blazebit.persistence.InsertCriteriaBuilder;
 
-import javax.persistence.EntityManager;
+import jakarta.persistence.EntityManager;
 
 /**
  * An abstract job instance processor implementation that produces target entities via a INSERT-SELECT statement.

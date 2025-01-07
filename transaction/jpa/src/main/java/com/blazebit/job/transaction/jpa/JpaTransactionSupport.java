@@ -19,8 +19,8 @@ import com.blazebit.apt.service.ServiceProvider;
 import com.blazebit.job.JobContext;
 import com.blazebit.job.spi.TransactionSupport;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;

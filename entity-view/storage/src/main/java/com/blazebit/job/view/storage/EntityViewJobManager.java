@@ -32,9 +32,9 @@ import com.blazebit.persistence.CriteriaBuilderFactory;
 import com.blazebit.persistence.view.EntityViewManager;
 import com.blazebit.persistence.view.EntityViewSetting;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-import javax.persistence.metamodel.EntityType;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
+import jakarta.persistence.metamodel.EntityType;
 import java.io.Serializable;
 import java.time.Clock;
 import java.time.Instant;

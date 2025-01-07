@@ -21,16 +21,16 @@ import com.blazebit.job.JobContext;
 import com.blazebit.job.JobInstanceProcessingContext;
 import com.blazebit.job.Schedule;
 
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Table;
-import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ForeignKey;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * An abstract mapped superclass implementing the {@link JpaJobTrigger} interface.
