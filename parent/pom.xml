@@ -20,7 +20,6 @@
         <version.blaze-utils>0.1.21</version.blaze-utils>
         <version.blaze-persistence>1.6.14</version.blaze-persistence>
 		<version.blaze-actor>1.0.0-Alpha6</version.blaze-actor>
-        <version.weld>2.4.5.Final</version.weld>
         <version.spring>6.2.1</version.spring>
         <version.junit>4.12</version.junit>
         <version.mockito>4.11.0</version.mockito>
@@ -58,23 +57,6 @@
                 <artifactId>blaze-apt-utils</artifactId>
                 <version>${version.blaze-utils}</version>
                 <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.weld.se</groupId>
-                <artifactId>weld-se-core</artifactId>
-                <version>${version.weld}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.jboss</groupId>
-                        <artifactId>jandex</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <!-- Since we are including a module-info.class file, we need at least 2.0.4.Final -->
-            <dependency>
-                <groupId>org.jboss</groupId>
-                <artifactId>jandex</artifactId>
-                <version>2.0.4.Final</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
