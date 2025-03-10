@@ -300,14 +300,11 @@ public class JpaJobManager implements JobManager {
             // TODO: lockMode for update? advisory locks?
             // TODO: PostgreSQL 9.5 supports the skip locked clause, but since then, we have to use advisory locks
 //                .where("FUNCTION('pg_try_advisory_xact_lock', id.userId)").eqExpression("true")
-            .setHint("org.hibernate.lockMode.e", "UPGRADE_SKIPLOCKED")
+            // Note that setting a lock mode globally here instead of using alias locking is problematic
+            // because the query includes join fetches and a global lock mode would also apply to those.
+            .setHint("org.hibernate.lockMode.e", "upgrade-skiplocked")
             .setMaxResults(limit)
             .getResultList();
-
-        // Detach the job instances to avoid accidental flushes due to changes
-//        for (int i = 0; i < jobInstances.size(); i++) {
-//            entityManager.detach(jobInstances.get(i));
-//        }
 
         return jobInstances;
     }

@@ -27,7 +27,7 @@ jobs:
           echo "::set-output name=yearmonth::$(/bin/date -u "+%Y-%m")"
         shell: bash
       - name: Cache Maven local repository
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         id: cache-maven
         with:
           path: |
