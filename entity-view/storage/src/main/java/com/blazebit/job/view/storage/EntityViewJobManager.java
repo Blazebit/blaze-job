@@ -155,7 +155,9 @@ public class EntityViewJobManager implements JobManager {
         CriteriaBuilder<Object> criteriaBuilder = createCriteriaBuilder(now, partition, partitionCount, entityViewPartitionKey, ids);
         CriteriaBuilder<JobInstance<?>> cb = entityViewManager.applySetting(EntityViewSetting.create((Class<JobInstance<?>>) entityViewPartitionKey.getEntityView()), criteriaBuilder);
         List<JobInstance<?>> jobInstances = cb.getQuery()
-            .setHint("org.hibernate.lockMode.e", "UPGRADE_SKIPLOCKED")
+            // Note that setting a lock mode globally here instead of using alias locking is problematic
+            // because the query includes join fetches and a global lock mode would also apply to those.
+            .setHint("org.hibernate.lockMode.e", "upgrade-skiplocked")
             .setMaxResults(limit)
             .getResultList();
 
